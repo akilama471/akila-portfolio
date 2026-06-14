@@ -30,7 +30,7 @@ export const metadata = {
     siteName: "Akila Portfolio",
     images: [
       {
-        url: "https://cdn.jsdelivr.net/gh/akilama471/akilama471.github.io@main/assets/img/og-image.webp",
+        url: "https://cdn.jsdelivr.net/gh/akilama471/akilama471.github.io@main/images/og-image.webp",
         width: 1200,
         height: 630,
       },
@@ -43,7 +43,7 @@ export const metadata = {
     description:
       "Portfolio of Akila Madhushanka - Flutter & Laravel Developer",
     images: [
-      "https://cdn.jsdelivr.net/gh/akilama471/akilama471.github.io@main/assets/img/twitter-image.webp",
+      "https://cdn.jsdelivr.net/gh/akilama471/akilama471.github.io@main/images/twitter-image.webp",
     ],
   },
 };
@@ -70,7 +70,7 @@ export default function RootLayout({
               name: "Akila Madhushanka",
               url: "https://akilama471.github.io",
               image:
-                "https://cdn.jsdelivr.net/gh/akilama471/akilama471.github.io@main/assets/img/my-profile-img.webp",
+                "https://cdn.jsdelivr.net/gh/akilama471/akilama471.github.io@main/images/my-profile-img.webp",
               jobTitle: "Full-Stack Developer",
               description: "Akila Madhushanka is a full-stack developer based in Sri Lanka specializing in building modern web and mobile applications using Laravel, Flutter, and Next.js. His portfolio showcases scalable software solutions, UI/UX-focused web apps, and freelance development services for businesses and startups.",
               worksFor: {
