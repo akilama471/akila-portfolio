@@ -22,6 +22,7 @@ export default function ProjectCard(props: ProjectCardProps) {
                     alt={props.title}
                     width={400}
                     height={400}
+                    loading="eager"
                 />
             </div>
             <div className="p-6 relative z-20">

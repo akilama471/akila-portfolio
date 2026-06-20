@@ -1,13 +1,36 @@
 "use client";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "@/data/icons";
 import Link from "next/link";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log("Submitted");
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        try {
+            await emailjs.sendForm(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+                e.currentTarget,
+                {
+                    publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '',
+                }
+            );
+            setSubmitStatus('success');
+            (e.target as HTMLFormElement).reset();
+        } catch (error) {
+            console.error('EmailJS Error:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -82,19 +105,33 @@ export default function Contact() {
                             <form onSubmit={handleSubmit} className="space-y-4">
                                 <div>
                                     <label htmlFor="contact-name" className="block text-sm text-gray-400 mb-1">Name</label>
-                                    <input type="text" id="contact-name" name="name" className="w-full bg-dark-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Your Name" />
+                                    <input type="text" id="contact-name" name="name" required className="w-full bg-dark-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Your Name" />
                                 </div>
                                 <div>
                                     <label htmlFor="contact-email" className="block text-sm text-gray-400 mb-1">Email</label>
-                                    <input type="email" id="contact-email" name="email" className="w-full bg-dark-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary transition-colors" placeholder="your@email.com" />
+                                    <input type="email" id="contact-email" name="email" required className="w-full bg-dark-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary transition-colors" placeholder="your@email.com" />
                                 </div>
                                 <div>
                                     <label htmlFor="contact-message" className="block text-sm text-gray-400 mb-1">Message</label>
-                                    <textarea rows={4} id="contact-message" name="message" className="w-full bg-dark-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Tell me about your project..."></textarea>
+                                    <textarea rows={4} id="contact-message" name="message" required className="w-full bg-dark-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Tell me about your project..."></textarea>
                                 </div>
-                                <button type="submit" className="w-full bg-primary text-white font-bold py-3 rounded-lg hover:bg-cyan-600 transition-colors shadow-lg shadow-primary/20">
-                                    Send Message
+                                <button 
+                                    type="submit" 
+                                    disabled={isSubmitting}
+                                    className="w-full bg-primary text-white font-bold py-3 rounded-lg hover:bg-cyan-600 transition-colors shadow-lg shadow-primary/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                                >
+                                    {isSubmitting ? "Sending..." : "Send Message"}
                                 </button>
+                                {submitStatus === 'success' && (
+                                    <p className="text-green-400 text-sm mt-4 text-center">
+                                        Message sent successfully! I'll get back to you soon.
+                                    </p>
+                                )}
+                                {submitStatus === 'error' && (
+                                    <p className="text-red-400 text-sm mt-4 text-center">
+                                        Something went wrong. Please try again or email directly.
+                                    </p>
+                                )}
                             </form>
                         </div>
 
