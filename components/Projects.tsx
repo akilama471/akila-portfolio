@@ -14,7 +14,7 @@ export default function Projects() {
                         <SectionTitle title="Projects" />
                         <p className="text-gray-400">A selection of enterprise-grade solutions.</p>
                     </div>
-                    <Link href="https://github.com/akilama471" target="_blank" className="hidden md:inline-flex items-center text-primary hover:text-white transition-colors mt-4 md:mt-0">
+                    <Link href="https://github.com/akilama471" target="_blank" rel="noopener noreferrer" aria-label="View all projects on GitHub" className="hidden md:inline-flex items-center text-primary hover:text-white transition-colors mt-4 md:mt-0">
                         View all on GitHub <FontAwesomeIcon icon={icons.github} className="ml-2" />
                     </Link>
                 </div>
@@ -30,12 +30,6 @@ export default function Projects() {
                             link={project.link}
                         />
                     ))}
-                </div>
-
-                <div className="text-center mt-12 md:hidden">
-                    <Link href="https://github.com/akilama471" className="inline-flex items-center text-primary hover:text-white transition-colors">
-                        View all on GitHub <FontAwesomeIcon icon={icons.github} className="ml-2" />
-                    </Link>
                 </div>
             </div>
         </section>

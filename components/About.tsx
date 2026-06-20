@@ -34,19 +34,19 @@ export default function About() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" data-aos="fade-left">
                         <div className="p-6 bg-dark-900 rounded-xl border border-gray-700 hover:border-primary/50 transition-colors">
-                            <FontAwesomeIcon icon={icons.graduationCap} className="text-primary text-3xl mb-4"/>
+                            <FontAwesomeIcon icon={icons.graduationCap} aria-hidden="true" className="text-primary text-3xl mb-4" />
                             <h4 className="text-white font-bold mb-2">Education</h4>
                             <p className="text-sm text-gray-400">University of Moratuwa (Python)</p>
                             <p className="text-sm text-gray-400 mt-1">FreeCodeCamp (Web)</p>
                         </div>
-                        <div className="p-6 bg-dark-900 rounded-xl border border-gray-700 hover:border-primary/50 transition-colors">                            
-                            <FontAwesomeIcon icon={icons.award} className="text-primary text-3xl mb-4"/>
+                        <div className="p-6 bg-dark-900 rounded-xl border border-gray-700 hover:border-primary/50 transition-colors">
+                            <FontAwesomeIcon icon={icons.award} aria-hidden="true" className="text-primary text-3xl mb-4" />
                             <h4 className="text-white font-bold mb-2">Certifications</h4>
                             <p className="text-sm text-gray-400">Microsoft C# Foundation</p>
                             <p className="text-sm text-gray-400 mt-1">Responsive Web Design</p>
                         </div>
-                        <div className="p-6 bg-dark-900 rounded-xl border border-gray-700 hover:border-primary/50 transition-colors sm:col-span-2">                            
-                            <FontAwesomeIcon icon={icons.laptopcode} className="text-primary text-3xl mb-4"/>
+                        <div className="p-6 bg-dark-900 rounded-xl border border-gray-700 hover:border-primary/50 transition-colors sm:col-span-2">
+                            <FontAwesomeIcon icon={icons.laptopcode} aria-hidden="true" className="text-primary text-3xl mb-4" />
                             <h4 className="text-white font-bold mb-2">Current Focus</h4>
                             <p className="text-sm text-gray-400">Building scalable enterprise solutions with Laravel & Flutter at NextGenWare.</p>
                         </div>

@@ -13,6 +13,7 @@ export default function AOSProvider({
         AOS.init({
             duration: 1000,
             once: true,
+            disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
         });
     }, []);
 

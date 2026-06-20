@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import AOSProvider from "@/components/widget/AOSProvider";
-import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/custom.css";
 import "./globals.css";
 import Script from "next/script";
@@ -8,16 +7,6 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
 config.autoAddCss = false;
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Akila Madhushanka | Full-Stack Developer & Solutions Architect",
@@ -68,7 +57,7 @@ export default function RootLayout({
 
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`h-full antialiased`}
     >
       <body className="bg-dark-900 text-gray-300 font-sans antialiased overflow-x-hidden relative">
         <Script
@@ -115,10 +104,10 @@ export default function RootLayout({
           }}
         />
 
-    <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-primary/20 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-secondary/20 rounded-full blur-[100px]"></div>
-    </div>
+        <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-primary/20 rounded-full blur-[100px]"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-secondary/20 rounded-full blur-[100px]"></div>
+        </div>
 
         <AOSProvider>{children}</AOSProvider></body>
     </html>

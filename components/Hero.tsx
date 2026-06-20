@@ -38,20 +38,20 @@ export default function Hero() {
                             View Work
                         </Link>
 
-                        <Link href="https://github.com/akilama471" target="_blank" className="px-8 py-3 bg-dark-800 border border-gray-700 text-white font-semibold rounded-lg hover:bg-dark-700 transition-all flex items-center gap-2">
-                         <FontAwesomeIcon icon={icons.github} /> GitHub
+                        <Link href="https://github.com/akilama471" target="_blank" aria-label="Github Profile" rel="noopener noreferrer" className="px-8 py-3 bg-dark-800 border border-gray-700 text-white font-semibold rounded-lg hover:bg-dark-700 transition-all flex items-center gap-2">
+                            <FontAwesomeIcon icon={icons.github} /> GitHub
                         </Link>
                     </div>
 
                     <div className="flex gap-6 pt-8 text-gray-400">
 
-                        <Link href="https://lk.linkedin.com/in/akilamadhushanka471" className="hover:text-primary transition-colors text-2xl">
+                        <Link href="https://lk.linkedin.com/in/akilamadhushanka471" aria-label="LinkedIn Profile" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-2xl">
                             <FontAwesomeIcon icon={icons.linkedin} />
                         </Link>
-                        <Link href="mailto:developer.akila5@gmail.com" className="hover:text-primary transition-colors text-2xl">
+                        <Link href="mailto:developer.akila5@gmail.com" aria-label="Akila's Email" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-2xl">
                             <FontAwesomeIcon icon={icons.envelope} />
                         </Link>
-                        <Link href="https://wa.me/+94767221025" className="hover:text-primary transition-colors text-2xl">
+                        <Link href="https://wa.me/94767221025" aria-label="Akila's Whatsapp" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-2xl">
                             <FontAwesomeIcon icon={icons.whatsapp} />
                         </Link>
                     </div>
