@@ -66,6 +66,7 @@ export default function Hero() {
                             alt="Akila Madhushanka"
                             width={400}
                             height={400}
+                            priority
                         />
 
                         <div className="absolute top-10 -right-4 glass px-4 py-2 rounded-lg flex items-center gap-3 animate-bounce shadow-lg z-20">
