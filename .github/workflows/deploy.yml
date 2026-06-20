@@ -1,0 +1,41 @@
+name: Deploy Next.js to External Pages Repository
+
+on:
+  push:
+    branches: ["main"] # Triggers on push to the main branch
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build and Export Site
+        run: npm run build
+        env:
+          NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY }}
+          NEXT_PUBLIC_EMAILJS_SERVICE_ID: ${{ secrets.NEXT_PUBLIC_EMAILJS_SERVICE_ID }}
+          NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: ${{ secrets.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID }}
+
+      - name: Deploy to akilama471.github.io
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.TARGET_REPO_PAT }}
+          external_repository: akilama471/akilama471.github.io
+          publish_branch: main # User pages serve from the main branch
+          publish_dir: ./out
+          cname: "" # Keep empty unless you have a custom domain mapped
