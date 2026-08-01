@@ -6,8 +6,15 @@ import Script from "next/script";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
+
+import ogImage from "@/assets/images/og-image.webp";
+import twitterImage from "@/assets/images/twitter-image.webp";
+import { imageUrl } from "@/utils/image";
+
+
 config.autoAddCss = false;
 
+const ogVersion = process.env.NEXT_PUBLIC_IMAGE_VERSION;
 export const metadata = {
   title: "Akila Madhushanka | Full-Stack Developer & Solutions Architect",
   description:
@@ -30,7 +37,7 @@ export const metadata = {
     siteName: "Akila Portfolio",
     images: [
       {
-        url: "https://cdn.jsdelivr.net/gh/akilama471/akilama471.github.io@main/images/og-image.webp",
+        url: imageUrl(ogImage),
         width: 1200,
         height: 630,
       },
@@ -43,7 +50,7 @@ export const metadata = {
     description:
       "Portfolio of Akila Madhushanka - Flutter & Laravel Developer",
     images: [
-      "https://cdn.jsdelivr.net/gh/akilama471/akilama471.github.io@main/images/twitter-image.webp",
+      imageUrl(twitterImage),
     ],
   },
 };
@@ -70,7 +77,7 @@ export default function RootLayout({
               name: "Akila Madhushanka",
               url: "https://akilama471.github.io",
               image:
-                "https://cdn.jsdelivr.net/gh/akilama471/akilama471.github.io@main/images/my-profile-img.webp",
+                `https://cdn.jsdelivr.net/gh/akilama471/akilama471.github.io@main/images/my-profile-img.webp?v=${ogVersion}`,
               jobTitle: "Full-Stack Developer",
               description: "Akila Madhushanka is a full-stack developer based in Sri Lanka specializing in building modern web and mobile applications using Laravel, Flutter, and Next.js. His portfolio showcases scalable software solutions, UI/UX-focused web apps, and freelance development services for businesses and startups.",
               worksFor: {

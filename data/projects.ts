@@ -1,10 +1,15 @@
+
+import nextGenEzPos from "@/assets/images/projects/laravel.webp";
+import telecomFieldService from "@/assets/images/projects/flutter.webp";
+import NextGenEzRestaurant from "@/assets/images/projects/flutter.webp";
+
 export const projects = [
     {
         id: "1",
         title: "NextGen EzPos",
         description: "A comprehensive ecosystem of inventory management, sales analytics, and CRM tools has been developed for Nextgenware software solutions.",
         tech: ["PHP"],
-        image: "https://cdn.jsdelivr.net/gh/akilama471/akilama471.github.io@main/images/projects/laravel.webp",
+        image: nextGenEzPos,
         link: "#"
     },
     {
@@ -12,7 +17,7 @@ export const projects = [
         title: "Telecom Field Service",
         description: "Cross-platform mobile solution optimizing technician dispatching and reducing resolution time by 42%.",
         tech: ["Flutter"],
-        image: "https://cdn.jsdelivr.net/gh/akilama471/akilama471.github.io@main/images/projects/flutter.webp",
+        image: telecomFieldService,
         link: "#"
     },
     {
@@ -20,7 +25,7 @@ export const projects = [
         title: "NextGen EzRestaurant",
         description: "Food service platform with real-time order processing and delivery logistics.",
         tech: ["Flutter"],
-        image: "https://cdn.jsdelivr.net/gh/akilama471/akilama471.github.io@main/images/projects/flutter.webp",
+        image: NextGenEzRestaurant,
         link: "#"
     }
 ];
