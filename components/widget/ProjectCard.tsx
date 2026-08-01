@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "@/data/icons";
-import { imageUrl } from "@/utils/image";
 
 interface ProjectCardProps {
     title: string;
@@ -18,7 +17,7 @@ export default function ProjectCard(props: ProjectCardProps) {
             <div className="h-48 overflow-hidden relative">
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent opacity-60 z-10"></div>
                 <Image
-                    src={imageUrl(props.image)}
+                    src={props.image}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     alt={props.title}
                     width={400}

@@ -9,7 +9,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import ogImage from "@/assets/images/og-image.webp";
 import twitterImage from "@/assets/images/twitter-image.webp";
-import { imageUrl } from "@/utils/image";
 
 
 config.autoAddCss = false;
@@ -37,7 +36,7 @@ export const metadata = {
     siteName: "Akila Portfolio",
     images: [
       {
-        url: imageUrl(ogImage),
+        url: ogImage.src,
         width: 1200,
         height: 630,
       },
@@ -50,7 +49,7 @@ export const metadata = {
     description:
       "Portfolio of Akila Madhushanka - Flutter & Laravel Developer",
     images: [
-      imageUrl(twitterImage),
+      twitterImage.src,
     ],
   },
 };

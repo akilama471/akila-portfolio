@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "@/data/icons";
-import { imageUrl } from "@/utils/image";
 import myProfileImg from "@/assets/images/my-profile-img.webp";
 
 export default function Hero() {
@@ -63,7 +62,7 @@ export default function Hero() {
                     <div className="relative w-72 h-72 md:w-96 md:h-96">
                         <div className="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-full blur-2xl opacity-30 animate-pulse"></div>
                         <Image
-                            src={imageUrl(myProfileImg)}
+                            src={myProfileImg.src}
                             className="relative w-full h-full object-cover rounded-full border-4 border-dark-800 shadow-2xl z-10 grayscale hover:grayscale-0 transition-all duration-500"
                             alt="Akila Madhushanka"
                             width={400}
