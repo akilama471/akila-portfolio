@@ -15,11 +15,11 @@ export default function Navbar() {
                 </Link>
                 
                 <div className="hidden md:flex space-x-8 text-sm font-medium">
-                    <Link href="#home" className="hover:text-primary transition-colors">Home</Link>
-                    <Link href="#about" className="hover:text-primary transition-colors">About</Link>
-                    <Link href="#skills" className="hover:text-primary transition-colors">Skills</Link>
-                    <Link href="#services" className="hover:text-primary transition-colors">Services</Link>
-                    <Link href="#projects" className="hover:text-primary transition-colors">Projects</Link>
+                    <Link href="#home" className=" px-4 py-2 hover:text-primary transition-colors">Home</Link>
+                    <Link href="#about" className=" px-4 py-2 hover:text-primary transition-colors">About</Link>
+                    <Link href="#skills" className=" px-4 py-2 hover:text-primary transition-colors">Skills</Link>
+                    <Link href="#services" className=" px-4 py-2 hover:text-primary transition-colors">Services</Link>
+                    <Link href="#projects" className=" px-4 py-2 hover:text-primary transition-colors">Projects</Link>
                     <Link href="#contact" className="bg-primary/10 text-primary px-4 py-2 rounded-full border border-primary/20 hover:bg-primary hover:text-white transition-all">Contact Me</Link>
                 </div>
 

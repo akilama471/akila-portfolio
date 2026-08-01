@@ -8,10 +8,10 @@ export default function Footer() {
                     &copy; <span>{new Date().getFullYear()}</span> Akila Madhushanka. All rights reserved.
                 </p>
                 <p className="text-gray-600 text-xs mt-2">
-                    Founder of
                     <Link href="https://www.nextgenware.lk" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
-                        NextGenWare Software Solutions
+                    Founder & Senior Software Engineer 
                     </Link>
+                    &nbsp; at NextGenWare
                 </p>
             </div>
         </footer>
