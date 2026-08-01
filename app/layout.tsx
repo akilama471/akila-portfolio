@@ -5,10 +5,10 @@ import "./globals.css";
 import Script from "next/script";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-
-
+import Link from "next/link";
 import ogImage from "@/assets/images/og-image.webp";
 import twitterImage from "@/assets/images/twitter-image.webp";
+import myProfileImg from "@/assets/images/my-profile-img.webp";
 
 
 config.autoAddCss = false;
@@ -115,7 +115,22 @@ export default function RootLayout({
           <div className="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-secondary/20 rounded-full blur-[100px]"></div>
         </div>
 
-        <AOSProvider>{children}</AOSProvider></body>
+        <AOSProvider>{children}</AOSProvider>
+
+        <footer className="bg-dark-900 border-t border-gray-800 py-8">
+            <div className="container mx-auto px-6 text-center">
+                <p className="text-gray-500 text-sm">
+                    &copy; <span>{new Date().getFullYear()}</span> Akila Madhushanka. All rights reserved.
+                </p>
+                <p className="text-gray-600 text-xs mt-2">
+                    <Link href="https://www.nextgenware.lk" target="_blank" rel="noopener noreferrer" className="hover:text-primary">
+                    Founder & Full Stack Software Engineer at NextGenWare
+                    </Link>                    
+                </p>
+            </div>
+        </footer>
+
+        </body>
     </html>
   );
 }
