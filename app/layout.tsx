@@ -63,9 +63,13 @@ export default function RootLayout({
 
     <html
       lang="en"
-      className={`h-full antialiased`}
+      className="h-full antialiased"
+      suppressHydrationWarning
     >
-      <body className="bg-dark-900 text-gray-300 font-sans antialiased overflow-x-hidden relative">
+      <body
+        className="bg-dark-900 text-gray-300 font-sans antialiased overflow-x-hidden relative"
+        suppressHydrationWarning
+      >
         <Script
           id="person-schema"
           type="application/ld+json"
