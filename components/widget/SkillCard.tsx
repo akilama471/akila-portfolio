@@ -1,11 +1,6 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-interface SkillItem {
-    name: string;
-    level: string;
-    value: number;
-}
+import { SkillItem } from "@/data/skills";
 
 interface SkillCardProps {
     icon: IconProp;
@@ -15,46 +10,62 @@ interface SkillCardProps {
     extra: string[];
 }
 
-const colorMap: Record<string, { bg: string; text: string }> = {
-    primary: { bg: "bg-primary", text: "text-primary" },
-    secondary: { bg: "bg-secondary", text: "text-secondary" },
-    "green-400": { bg: "bg-green-400", text: "text-green-400" },
+const colorMap: Record<string, { text: string; badge: string; border: string }> = {
+    primary: {
+        text: "text-primary",
+        badge: "bg-primary/10 text-primary border-primary/20",
+        border: "hover:border-primary/50",
+    },
+    secondary: {
+        text: "text-secondary",
+        badge: "bg-secondary/10 text-secondary border-secondary/20",
+        border: "hover:border-secondary/50",
+    },
+    "green-400": {
+        text: "text-green-400",
+        badge: "bg-green-400/10 text-green-400 border-green-400/20",
+        border: "hover:border-green-400/50",
+    },
 };
 
 export default function SkillCard(props: SkillCardProps) {
-
     const colors = colorMap[props.color] || colorMap.primary;
 
-    return (<div className="p-6 rounded-2xl bg-dark-800 border border-gray-700 hover:border-primary/30 transition-all" data-aos="fade-up" data-aos-delay="100">
-        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-            <FontAwesomeIcon icon={props.icon} className={colors.text} aria-hidden="true" /> {props.section}
-        </h3>
-        <div className="space-y-4">
-            {props.items.map((item) => (
-                <div key={item.name}>
-                    <div className="flex justify-between mb-1">
-                        <span className="text-sm font-medium text-gray-300">{item.name}</span>
-                        <span className={`text-xs ${colors.text}`}>{item.level}</span>
-                    </div>
-                    <div className="w-full bg-dark-900 rounded-full h-2">
+    return (
+        <div
+            className={`p-6 rounded-2xl bg-dark-800 border border-gray-700 ${colors.border} transition-all duration-300 flex flex-col justify-between`}
+            data-aos="fade-up"
+            data-aos-delay="100"
+        >
+            <div>
+                <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    <FontAwesomeIcon icon={props.icon} className={colors.text} aria-hidden="true" /> {props.section}
+                </h3>
+
+                <div className="flex flex-wrap gap-2.5">
+                    {props.items.map((item) => (
                         <div
-                            role="progressbar"
-                            aria-label={item.name}
-                            aria-valuenow={item.value}
-                            aria-valuemin={0}
-                            aria-valuemax={100}
-                            className={`${colors.bg} h-2 rounded-full`}
-                            style={{ width: `${item.value}%` }}>
+                            key={item.name}
+                            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-900 border border-gray-700/80 hover:border-gray-600 transition-colors"
+                        >
+                            <span className="text-sm font-medium text-gray-200">{item.name}</span>
+                            <span className={`text-[10px] px-1.5 py-0.5 rounded border font-mono uppercase tracking-wider ${colors.badge}`}>
+                                {item.level}
+                            </span>
                         </div>
-                    </div>
+                    ))}
                 </div>
-            ))}
+            </div>
+
             {props.extra.length > 0 && (
-                <div className="pt-4 border-t border-gray-700 mt-4">
-                    <p className="text-sm text-gray-400 mb-2">Additional Tools</p>
+                <div className="pt-6 border-t border-gray-700/60 mt-6">
+                    <p className="text-xs uppercase tracking-wider text-gray-400 font-semibold mb-3">Additional Tools & Workflow</p>
                     <div className="flex flex-wrap gap-2">
                         {props.extra.map((tool: string) => (
-                            <span key={tool} className="bg-dark-900 px-3 py-1 rounded text-xs text-gray-400 border border-gray-700">
+                            <span
+                                key={tool}
+                                className="bg-dark-900/80 px-2.5 py-1 rounded-md text-xs text-gray-400 border border-gray-800 hover:text-gray-200 transition-colors"
+                            >
                                 {tool}
                             </span>
                         ))}
@@ -62,5 +73,5 @@ export default function SkillCard(props: SkillCardProps) {
                 </div>
             )}
         </div>
-    </div>);
+    );
 }
