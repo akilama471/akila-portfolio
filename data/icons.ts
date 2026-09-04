@@ -1,5 +1,5 @@
 import { faGithub, faLinkedin, faFacebook, faWhatsapp, faFlutter, faLaravel } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faPhone, faGraduationCap, faAward, faLaptopCode, faCode, faServer, faMobileAlt, faGlobe, faMobileScreen, faDesktop, faChartLine, faBars, faMapMarkerAlt, faArrowRight, faChevronRight, faXmark, faLock, faArrowUpRightFromSquare, faShieldHalved, faWrench, faLayerGroup, faGamepad, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPhone, faGraduationCap, faAward, faLaptopCode, faCode, faServer, faMobileAlt, faGlobe, faMobileScreen, faDesktop, faChartLine, faBars, faMapMarkerAlt, faArrowRight, faChevronRight, faXmark, faLock, faArrowUpRightFromSquare, faShieldHalved, faWrench, faLayerGroup, faGamepad, faCircleCheck, faCertificate, faMagnifyingGlassPlus, faIdBadge } from "@fortawesome/free-solid-svg-icons";
 
 export const icons = {
     github: faGithub,
@@ -33,4 +33,7 @@ export const icons = {
     layers: faLayerGroup,
     gamepad: faGamepad,
     checkCircle: faCircleCheck,
+    certificate: faCertificate,
+    zoomIn: faMagnifyingGlassPlus,
+    idBadge: faIdBadge,
 };

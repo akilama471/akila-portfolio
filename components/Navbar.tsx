@@ -20,6 +20,7 @@ export default function Navbar() {
                     <Link href="/#skills" className=" px-4 py-2 hover:text-primary transition-colors">Skills</Link>
                     <Link href="/#services" className=" px-4 py-2 hover:text-primary transition-colors">Services</Link>
                     <Link href="/projects" className=" px-4 py-2 hover:text-primary transition-colors">Projects</Link>
+                    <Link href="/certificates" className=" px-4 py-2 hover:text-primary transition-colors">Certificates</Link>
                     <Link href="/#contact" className="bg-primary/10 text-primary px-4 py-2 rounded-full border border-primary/20 hover:bg-primary hover:text-white transition-all">Contact Me</Link>
                 </div>
 
@@ -42,6 +43,7 @@ export default function Navbar() {
                         <Link href="/#skills" onClick={() => setIsOpen(false)} className="block hover:text-primary">Skills</Link>
                         <Link href="/#services" onClick={() => setIsOpen(false)} className="block hover:text-primary">Services</Link>
                         <Link href="/projects" onClick={() => setIsOpen(false)} className="block hover:text-primary">Projects</Link>
+                        <Link href="/certificates" onClick={() => setIsOpen(false)} className="block hover:text-primary">Certificates</Link>
                         <Link href="/#contact" onClick={() => setIsOpen(false)} className="block text-primary">Contact Me</Link>
                     </div>
                 </div>
