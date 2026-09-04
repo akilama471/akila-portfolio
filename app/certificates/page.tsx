@@ -7,7 +7,6 @@ import { icons } from "@/data/icons";
 import { certificates, certificateCategories, Certificate, CredentialCategory } from "@/data/certificates";
 import CertificateCard from "@/components/widget/CertificateCard";
 import CertificateModal from "@/components/widget/CertificateModal";
-import Navbar from "@/components/Navbar";
 
 export default function CertificatesArchivePage() {
     const [selectedCategory, setSelectedCategory] = useState<CredentialCategory>("all");
@@ -43,7 +42,6 @@ export default function CertificatesArchivePage() {
 
     return (
         <>
-            <Navbar />
             <main className="min-h-screen bg-dark-900 text-gray-300 pt-28 pb-16 md:pt-32 md:pb-20">
                 <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
                     {/* Top Navigation */}
@@ -102,21 +100,19 @@ export default function CertificatesArchivePage() {
                             <div className="flex items-center rounded-xl bg-dark-800 border border-gray-700 p-1">
                                 <button
                                     onClick={() => setViewMode("grid")}
-                                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                                        viewMode === "grid"
+                                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${viewMode === "grid"
                                             ? "bg-primary text-dark-900 font-bold"
                                             : "text-gray-400 hover:text-white"
-                                    }`}
+                                        }`}
                                 >
                                     Card Grid
                                 </button>
                                 <button
                                     onClick={() => setViewMode("table")}
-                                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                                        viewMode === "table"
+                                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${viewMode === "table"
                                             ? "bg-primary text-dark-900 font-bold"
                                             : "text-gray-400 hover:text-white"
-                                    }`}
+                                        }`}
                                 >
                                     Table List
                                 </button>
@@ -134,17 +130,15 @@ export default function CertificatesArchivePage() {
                                 <button
                                     key={cat.id}
                                     onClick={() => setSelectedCategory(cat.id as CredentialCategory)}
-                                    className={`px-3.5 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all flex items-center gap-2 border ${
-                                        isActive
+                                    className={`px-3.5 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all flex items-center gap-2 border ${isActive
                                             ? "bg-primary text-dark-900 border-primary shadow-md shadow-primary/20 font-semibold"
                                             : "bg-dark-800/80 text-gray-300 border-gray-700/80 hover:border-gray-600 hover:text-white"
-                                    }`}
+                                        }`}
                                 >
                                     <span>{cat.label}</span>
                                     <span
-                                        className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
-                                            isActive ? "bg-dark-900/30 text-dark-900" : "bg-dark-900 text-gray-400"
-                                        }`}
+                                        className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${isActive ? "bg-dark-900/30 text-dark-900" : "bg-dark-900 text-gray-400"
+                                            }`}
                                     >
                                         {count}
                                     </span>
