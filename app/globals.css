@@ -3,8 +3,8 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-    --font-sans: "Outfit", sans-serif;
-    --font-mono: "Space Grotesk", monospace;
+    --font-sans: var(--font-outfit), "Outfit", sans-serif;
+    --font-mono: var(--font-space-grotesk), "Space Grotesk", monospace;
     --color-primary: #06b6d4;
     --color-secondary: #3b82f6;
     --color-dark-900: #0f172a;

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import { Outfit, Space_Grotesk } from "next/font/google";
 import AOSProvider from "@/components/widget/AOSProvider";
-import "../styles/custom.css";
 import "./globals.css";
 import Script from "next/script";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -9,6 +9,18 @@ import Link from "next/link";
 import ogImage from "@/assets/images/og-image.webp";
 import twitterImage from "@/assets/images/twitter-image.webp";
 import myProfileImg from "@/assets/images/my-profile-img.webp";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
 
 
 config.autoAddCss = false;
@@ -63,7 +75,7 @@ export default function RootLayout({
 
     <html
       lang="en"
-      className="h-full antialiased"
+      className={`h-full antialiased ${outfit.variable} ${spaceGrotesk.variable}`}
       suppressHydrationWarning
     >
       <body

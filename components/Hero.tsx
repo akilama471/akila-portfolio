@@ -62,12 +62,13 @@ export default function Hero() {
                     <div className="relative w-72 h-72 md:w-96 md:h-96">
                         <div className="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-full blur-2xl opacity-30 animate-pulse"></div>
                         <Image
-                            src={myProfileImg.src}
+                            src={myProfileImg}
                             className="relative w-full h-full object-cover rounded-full border-4 border-dark-800 shadow-2xl z-10 grayscale hover:grayscale-0 transition-all duration-500"
                             alt="Akila Madhushanka"
-                            width={400}
-                            height={400}
+                            width={384}
+                            height={384}
                             priority
+                            sizes="(max-width: 768px) 288px, 384px"
                         />
 
                         <div className="absolute top-10 -right-4 glass px-4 py-2 rounded-lg flex items-center gap-3 animate-bounce shadow-lg z-20">

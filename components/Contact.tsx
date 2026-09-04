@@ -3,7 +3,6 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "@/data/icons";
 import Link from "next/link";
-import emailjs from "@emailjs/browser";
 
 export default function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -15,6 +14,7 @@ export default function Contact() {
         setSubmitStatus(null);
 
         try {
+            const emailjs = (await import("@emailjs/browser")).default;
             await emailjs.sendForm(
                 process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
                 process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
