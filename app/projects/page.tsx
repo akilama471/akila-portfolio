@@ -56,7 +56,7 @@ export default function ProjectsArchivePage() {
                     {/* Top Navigation */}
                     <div className="mb-8">
                         <Link
-                            href="/#projects"
+                            href="/"
                             className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-white transition-colors group"
                         >
                             <FontAwesomeIcon
@@ -110,8 +110,8 @@ export default function ProjectsArchivePage() {
                                 <button
                                     onClick={() => setViewMode("table")}
                                     className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${viewMode === "table"
-                                            ? "bg-primary text-dark-900 font-bold"
-                                            : "text-gray-400 hover:text-white"
+                                        ? "bg-primary text-dark-900 font-bold"
+                                        : "text-gray-400 hover:text-white"
                                         }`}
                                 >
                                     Table Archive
@@ -119,8 +119,8 @@ export default function ProjectsArchivePage() {
                                 <button
                                     onClick={() => setViewMode("grid")}
                                     className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${viewMode === "grid"
-                                            ? "bg-primary text-dark-900 font-bold"
-                                            : "text-gray-400 hover:text-white"
+                                        ? "bg-primary text-dark-900 font-bold"
+                                        : "text-gray-400 hover:text-white"
                                         }`}
                                 >
                                     Card Grid
@@ -140,8 +140,8 @@ export default function ProjectsArchivePage() {
                                     key={cat.id}
                                     onClick={() => setSelectedCategory(cat.id as ProjectCategory)}
                                     className={`px-3.5 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all flex items-center gap-2 border ${isActive
-                                            ? "bg-primary text-dark-900 border-primary shadow-md shadow-primary/20 font-semibold"
-                                            : "bg-dark-800/80 text-gray-300 border-gray-700/80 hover:border-gray-600 hover:text-white"
+                                        ? "bg-primary text-dark-900 border-primary shadow-md shadow-primary/20 font-semibold"
+                                        : "bg-dark-800/80 text-gray-300 border-gray-700/80 hover:border-gray-600 hover:text-white"
                                         }`}
                                 >
                                     <span>{cat.label}</span>

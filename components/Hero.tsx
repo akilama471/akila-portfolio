@@ -11,7 +11,7 @@ export default function Hero() {
     return (
         <section id="home" className="relative min-h-screen flex items-center pt-20 z-10">
             <div className="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center gap-12">
-                <div className="w-full md:w-1/2 space-y-6" data-aos="fade-right">
+                <div className="w-full md:w-1/2 space-y-6 animate-project-fade">
                     <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-mono mb-2">
                         👋 Hello, I'm
                     </div>
@@ -35,7 +35,7 @@ export default function Hero() {
 
                     <div className="flex flex-wrap gap-4 pt-4">
 
-                        <Link href="#projects" className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-lg hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all transform hover:-translate-y-1">
+                        <Link href="/projects" className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-lg hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all transform hover:-translate-y-1">
                             View Work
                         </Link>
 
@@ -58,7 +58,7 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="w-full md:w-1/2 flex justify-center relative" data-aos="zoom-in">
+                <div className="w-full md:w-1/2 flex justify-center relative animate-fade-in">
                     <div className="relative w-72 h-72 md:w-96 md:h-96">
                         <div className="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-full blur-2xl opacity-30 animate-pulse"></div>
                         <Image

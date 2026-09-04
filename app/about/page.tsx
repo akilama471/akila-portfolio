@@ -17,7 +17,7 @@ export default function AboutPage() {
                     {/* Back Link */}
                     <div className="mb-8">
                         <Link
-                            href="/#about"
+                            href="/"
                             className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-white transition-colors group"
                         >
                             <FontAwesomeIcon
