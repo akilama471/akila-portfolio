@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "@/data/icons";
 
@@ -20,16 +21,24 @@ export default function About() {
                             I specialize in building robust digital solutions, from responsive web applications to scalable backend systems and cross-platform mobile apps. Founder of <span className="text-primary font-semibold">NextGenWare</span>, I help businesses bridge the gap between technology and success.
                         </p>
 
-                        <div className="grid grid-cols-2 gap-4 mb-8">
+                        <div className="grid grid-cols-2 gap-4 mb-6">
                             <div className="p-4 bg-dark-900 rounded-lg border border-gray-700">
                                 <h4 className="text-primary font-bold text-xl">5+</h4>
                                 <p className="text-sm text-gray-400">Years Experience</p>
                             </div>
                             <div className="p-4 bg-dark-900 rounded-lg border border-gray-700">
-                                <h4 className="text-primary font-bold text-xl">20+</h4>
-                                <p className="text-sm text-gray-400">Projects Completed</p>
+                                <h4 className="text-primary font-bold text-xl">57+</h4>
+                                <p className="text-sm text-gray-400">Projects Built</p>
                             </div>
                         </div>
+
+                        <Link
+                            href="/about"
+                            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-white transition-colors group"
+                        >
+                            <span>Read Full Story & Credentials</span>
+                            <FontAwesomeIcon icon={icons.arrowRight} className="text-xs group-hover:translate-x-1 transition-transform" />
+                        </Link>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" data-aos="fade-left">
