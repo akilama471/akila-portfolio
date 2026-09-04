@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "@/data/icons";
 import { Project } from "@/data/projects";
+import { defaultBlurDataURL } from "@/data/imageBlur";
 
 interface ProjectModalProps {
     project: Project | null;
@@ -69,6 +70,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                         alt={project.title}
                         fill
                         className="object-cover"
+                        placeholder="blur"
+                        blurDataURL={defaultBlurDataURL}
                         sizes="(max-width: 768px) 100vw, 672px"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-dark-800 via-dark-800/40 to-transparent"></div>

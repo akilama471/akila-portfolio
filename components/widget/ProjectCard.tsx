@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "@/data/icons";
 import { Project } from "@/data/projects";
+import { defaultBlurDataURL } from "@/data/imageBlur";
 
 interface ProjectCardProps {
     project: Project;
@@ -36,6 +37,8 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
                         width={360}
                         height={180}
                         loading="lazy"
+                        placeholder="blur"
+                        blurDataURL={defaultBlurDataURL}
                     />
 
                     {/* Top Badges */}

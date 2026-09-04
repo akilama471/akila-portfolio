@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "@/data/icons";
 import { Certificate } from "@/data/certificates";
+import { defaultBlurDataURL } from "@/data/imageBlur";
 
 interface CertificateCardProps {
     certificate: Certificate;
@@ -24,6 +25,8 @@ export default function CertificateCard({ certificate, onOpenModal }: Certificat
                         className="object-contain p-2 group-hover:scale-105 transition-transform duration-500"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         loading="lazy"
+                        placeholder="blur"
+                        blurDataURL={defaultBlurDataURL}
                     />
 
                     {/* Gradient Overlay & Zoom Icon */}

@@ -40,6 +40,7 @@ export default function AboutPage() {
                                         alt="Akila Madhushanka"
                                         fill
                                         priority
+                                        placeholder="blur"
                                         className="object-cover"
                                         sizes="(max-width: 768px) 256px, 320px"
                                     />

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "@/data/icons";
 import { Certificate } from "@/data/certificates";
+import { defaultBlurDataURL } from "@/data/imageBlur";
 
 interface CertificateModalProps {
     certificate: Certificate | null;
@@ -71,6 +72,8 @@ export default function CertificateModal({ certificate, onClose }: CertificateMo
                             height={isZoomed ? 850 : undefined}
                             className={`${isZoomed ? "w-full h-auto object-contain" : "object-contain"} p-2`}
                             priority
+                            placeholder="blur"
+                            blurDataURL={defaultBlurDataURL}
                             sizes="(max-width: 1024px) 100vw, 896px"
                         />
                     </div>
