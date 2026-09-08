@@ -15,14 +15,9 @@ export default function AOSProvider({
     useEffect(() => {
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+        // If user prefers reduced motion, do not initialize AOS.
+        // CSS in globals.css ensures elements remain fully visible without animations.
         if (prefersReducedMotion) {
-            // Remove data-aos attributes on newly mounted DOM nodes so no AOS inline/CSS hides content
-            document.querySelectorAll("[data-aos]").forEach((el) => {
-                el.removeAttribute("data-aos");
-                el.removeAttribute("data-aos-delay");
-                el.removeAttribute("data-aos-duration");
-                el.removeAttribute("data-aos-easing");
-            });
             return;
         }
 
