@@ -79,11 +79,19 @@ export default function ProjectCard({ project, onOpenDetails }: ProjectCardProps
 
                     <h3
                         onClick={() => onOpenDetails(project)}
-                        className="text-sm md:text-base font-bold text-white mb-1.5 group-hover:text-primary transition-colors line-clamp-1 cursor-pointer"
+                        className="text-sm md:text-base font-bold text-white mb-1 group-hover:text-primary transition-colors line-clamp-1 cursor-pointer"
                         title={project.title}
                     >
                         {project.title}
                     </h3>
+
+                    {project.myRole && (
+                        <p className="text-[11px] text-cyan-400 font-mono font-medium mb-1.5 flex items-center gap-1.5 truncate">
+                            <FontAwesomeIcon icon={icons.userTie} className="text-[10px] text-cyan-400/80 shrink-0" />
+                            <span className="truncate">{project.myRole}</span>
+                        </p>
+                    )}
+
                     <p className="text-xs text-gray-400 mb-2 line-clamp-2 leading-relaxed">
                         {project.description}
                     </p>

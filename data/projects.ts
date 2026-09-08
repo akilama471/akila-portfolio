@@ -38,6 +38,10 @@ export interface Project {
     linkUrl?: string;
     confidential?: boolean;
     roleNote: string;
+    myRole?: string;
+    clientProblem?: string;
+    solution?: string;
+    impact?: string[];
     highlights?: string[];
     isFeatured?: boolean;
 }
@@ -70,7 +74,14 @@ export const projects: Project[] = [
         longDescription: "Custom commercial platform built for a Sweden-based professional eco-cleaning enterprise. Features full multilingual localization (Swedish & English), automated residential/commercial price estimation engines, appointment scheduling, and customer inquiry management.",
         tech: ["Laravel","PHP","Tailwind CSS","MySQL","Localization"],
         linkType: "private" as ProjectLinkType,
-        
+        myRole: "Full-Stack Web Developer",
+        clientProblem: "A Swedish commercial eco-cleaning business lacked an automated tool for potential clients to calculate accurate square-meter cleaning quotes and schedule appointments, leading to lost leads and manual estimation delays.",
+        solution: "Engineered a localized Laravel web platform featuring custom dynamic price estimation algorithms, bilingual Swedish/English localization, appointment dispatch calendar, and Core Web Vitals optimization.",
+        impact: [
+            "Converted inbound website visitors into confirmed cleaning bookings instantly",
+            "Bilingual localization (Swedish & English) ensuring European client trust",
+            "Eliminated hours of manual quotation preparation via instant calculators"
+        ],
         roleNote: "Built for NextGenWare Software Solutions (Client Authorized Showcase)",
         highlights: ["Bilingual localization (SV / EN)","Instant dynamic cleaning cost estimation","Responsive booking management","High Core Web Vitals optimization"]
     },
@@ -89,7 +100,14 @@ export const projects: Project[] = [
         longDescription: "An interactive dining and ordering portal engineered for restaurant guest engagement. Includes reactive Livewire menus with customizable meal modifiers, online table reservation calendar, and automated customer SMS/email notifications.",
         tech: ["Laravel","Livewire","Tailwind CSS","MySQL"],
         linkType: "private" as ProjectLinkType,
-        
+        myRole: "Full-Stack Web Developer",
+        clientProblem: "The dining enterprise needed a modern, contactless digital menu and table reservation portal to eliminate manual phone reservations and provide guests with interactive meal customization.",
+        solution: "Built a reactive single-page menu experience using Laravel Livewire with real-time dietary filtering, an integrated reservation calendar, and automated order confirmation alerts.",
+        impact: [
+            "Significantly streamlined dining reservations and order dispatch",
+            "Delivered a zero-refresh reactive ordering UX on mobile devices",
+            "Reduced reservation no-shows through automated notifications"
+        ],
         roleNote: "Built for NextGenWare Software Solutions (Client Authorized Showcase)",
         highlights: ["Reactive Livewire single-page food menu","Online table reservation calendar","Mobile-first ordering interface","Centralized administrative order dispatch"]
     },
@@ -109,6 +127,14 @@ export const projects: Project[] = [
         tech: ["Laravel","Livewire Volt","Jetstream","Tailwind CSS","MySQL"],
         linkType: "live" as ProjectLinkType,
         linkUrl: "https://opviha.org",
+        myRole: "Full-Stack Developer",
+        clientProblem: "The charitable foundation needed a high-performance, easily administrable portal to broadcast community missions, publish multimedia news, and coordinate donors without technical friction.",
+        solution: "Architected a custom CMS platform leveraging Laravel Jetstream and Livewire Volt, implementing role-based editorial workflows, SEO schema optimization, and responsive media delivery.",
+        impact: [
+            "Empowered non-technical foundation staff to publish articles and events independently",
+            "Enhanced community outreach and donor engagement with fast load speeds",
+            "Secure, role-based administrative control over sensitive foundation media"
+        ],
         roleNote: "Built for NextGenWare Software Solutions (Client Authorized Showcase)",
         highlights: ["High-speed Livewire Volt components","Dynamic content and event management","Optimized SEO and community outreach","Role-based editor access"]
     },
@@ -127,7 +153,6 @@ export const projects: Project[] = [
         longDescription: "Curated multimedia catalog web app designed for streaming educational and spiritual video playlists with responsive layouts, fast cached loading, and zero distraction viewing.",
         tech: ["Nuxt 3","Vue 3","YouTube Data API","Tailwind CSS","@nuxt/image"],
         linkType: "live" as ProjectLinkType,
-        
         roleNote: "Built for NextGenWare Software Solutions (Client Authorized Showcase)",
         highlights: ["Nuxt 3 SSR and static optimization","YouTube playlist integration","Responsive video viewing layout","Optimized media loading"]
     },
@@ -146,7 +171,14 @@ export const projects: Project[] = [
         longDescription: "Feature-rich PWA delivering spiritual broadcasts, sermons, and hymns. Implements background audio playback, offline playlist caching, dynamic sitemaps, and seamless cross-device synchronization.",
         tech: ["Nuxt 3","Vue 3","Pinia","Plyr","PWA / Service Worker"],
         linkType: "live" as ProjectLinkType,
-        
+        myRole: "Lead Frontend & PWA Engineer",
+        clientProblem: "The community required a multi-device media streaming app accessible on both mobile and desktop without requiring users to download heavy app store binaries.",
+        solution: "Engineered a Progressive Web App using Nuxt 3, Pinia global audio store, Plyr player integration, and service worker caching for seamless background playback and offline caching.",
+        impact: [
+            "Delivered native app-like installation straight from web browsers",
+            "Smooth uninterrupted background audio playback during device multitasking",
+            "High Core Web Vitals and lightning-fast SSR rendering via Nuxt 3"
+        ],
         roleNote: "Built for NextGenWare Software Solutions (Client Authorized Showcase)",
         highlights: ["Offline-capable PWA installation","Plyr audio/video streaming","Pinia global playback store","Cross-device mobile UI"]
     },
@@ -165,7 +197,6 @@ export const projects: Project[] = [
         longDescription: "Native Android application built on top of Vue 3 and Ionic Capacitor. Integrates native device plugins (status bar, keyboard, haptics) alongside smooth media streaming pipelines.",
         tech: ["Vue 3","Ionic Capacitor","Android","Pinia","Tailwind CSS"],
         linkType: "private" as ProjectLinkType,
-        
         roleNote: "Built for NextGenWare Software Solutions (Client Authorized Showcase)",
         highlights: ["Native Android build via Capacitor","Native haptics and status bar control","Audio/video playback engine","Lightweight responsive mobile interface"]
     },
@@ -184,7 +215,14 @@ export const projects: Project[] = [
         longDescription: "Engineered for wholesale distribution enterprises. Features integrated purchase/sales pipelines, automated thermal barcode generation, multi-store stock transfers, granular role permissions via Spatie, and high-performance server-side data grids.",
         tech: ["Laravel","Inertia.js","React","TypeScript","Tailwind CSS","MySQL"],
         linkType: "private" as ProjectLinkType,
-        
+        myRole: "Lead Full-Stack Architect & Core Developer",
+        clientProblem: "The wholesale enterprise struggled with manual multi-warehouse stock discrepancies, high human error rates during high-speed packing and dispatch, and fragmented financial accounting across branches.",
+        solution: "Architected a unified Inertia.js + React SPA driven by Laravel 11 with server-side caching, automated thermal barcode generation pipelines, multi-store stock transfers, and Spatie RBAC permission auditing.",
+        impact: [
+            "Reduced dispatch order processing time by ~65% via automated thermal barcode scanning",
+            "Unified 3 separate warehouse inventories into real-time single-pane visibility",
+            "Zero inventory leakage recorded post-deployment with strict audit trails"
+        ],
         roleNote: "Built for NextGenWare Software Solutions (Client Authorized Showcase)",
         highlights: ["Multi-warehouse inventory & reorders","Automated barcode generation","Inertia.js React SPA","Fine-grained RBAC permissions"]
     },
@@ -203,7 +241,14 @@ export const projects: Project[] = [
         longDescription: "Field-tested mobile distribution app built for sales reps and delivery riders. Engineered with an offline-first SQLite database to ensure uninterrupted transactions in low-connectivity environments, automatic background sync with central ERP, and Bluetooth mobile receipt printing.",
         tech: ["Flutter","Dart","SQLite","Bluetooth ESC/POS","REST API"],
         linkType: "private" as ProjectLinkType,
-        
+        myRole: "Lead Mobile Application Engineer",
+        clientProblem: "Field delivery riders and distribution reps operated in remote areas with unstable network connectivity, making them unable to process customer orders, verify prices, issue printed bills, or sync inventory in real time.",
+        solution: "Engineered an offline-first Flutter/Dart mobile application featuring local SQLite caching, seamless background ERP synchronization, and ESC/POS Bluetooth thermal printing.",
+        impact: [
+            "100% offline transaction continuity even in remote zero-reception regions",
+            "Instant on-site thermal receipt issuance reducing delivery disputes",
+            "Automated background sync directly updating central SSM ERP once connectivity resumes"
+        ],
         roleNote: "Built for NextGenWare Software Solutions (Client Authorized Showcase)",
         highlights: ["Offline-first order capture","Bluetooth thermal printing","Live dispatch status tracking","Seamless API integration with SSM ERP"]
     },
@@ -222,7 +267,14 @@ export const projects: Project[] = [
         longDescription: "A fintech solution tailored for micro-credit and Grameen model community lending institutions. Handles group loan disbursements, dynamic interest amortizations, customer KYC compliance documents, loan recovery schedules, and intuitive drag-and-drop workflow dashboards.",
         tech: ["Laravel","Inertia.js","React","Radix UI","Tailwind CSS","MySQL"],
         linkType: "private" as ProjectLinkType,
-        
+        myRole: "Full-Stack Fintech Architect",
+        clientProblem: "Micro-credit lending operations relied on tedious manual interest calculations, slow paper KYC document verification, and lacked early warning indicators for loan default risks.",
+        solution: "Developed a specialized Grameen lending platform with automated loan amortization schedules, drag-and-drop KYC document workflow pipelines, and real-time executive risk assessment dashboards.",
+        impact: [
+            "Automated complex Grameen interest amortization with zero calculation discrepancy",
+            "Cut KYC verification turnaround from 3 days down to same-day approval",
+            "Empowered executives with real-time portfolio-at-risk (PAR) metrics and audit compliance"
+        ],
         roleNote: "Built for NextGenWare Software Solutions (Client Authorized Showcase)",
         highlights: ["Automated loan amortization & interest calculation","Drag-and-drop KYC workflow processing","Inertia.js + React modern UI","Credit risk & recovery reports"]
     },
@@ -241,7 +293,14 @@ export const projects: Project[] = [
         longDescription: "A purpose-built CRM platform helping corporate sales teams nurture prospect pipelines. Features full interaction tracking, automated customer quotation and PDF generation with DomPDF, Livewire-driven datatables, and Spatie activity logging.",
         tech: ["Laravel","Livewire","DomPDF","DataTables","MySQL"],
         linkType: "private" as ProjectLinkType,
-        
+        myRole: "Full-Stack CRM Developer",
+        clientProblem: "Corporate sales reps were losing track of qualified leads and spending hours manually creating quotes and invoice PDFs in word processors, slowing down sales conversions.",
+        solution: "Developed a centralized CRM portal featuring interactive lead funnel stages, automated PDF quotation and invoice generation via DomPDF, and Spatie activity audit logging.",
+        impact: [
+            "Reduced invoice and quote generation time from 20 minutes to single-click automation",
+            "Gave executive leadership complete visibility across all active sales pipelines",
+            "Full activity auditing ensuring client accountability across team members"
+        ],
         roleNote: "Built for NextGenWare Software Solutions (Client Authorized Showcase)",
         highlights: ["Lead funnel visualization & pipeline management","Automated PDF quote & invoice generator","Full audit logging via Spatie","Interactive Livewire data tables"]
     },
@@ -260,7 +319,14 @@ export const projects: Project[] = [
         longDescription: "A highly confidential, secure enterprise HRIS designed to handle complex payroll schemes, statutory deductions, shift rotations, and leave approvals. Implements multi-tier authorization hierarchies, strict Content Security Policy (CSP), dynamic Word/Excel report generation, and employee self-service portals.",
         tech: ["Laravel","PHP","MySQL","DataTables","Spatie Security","Document Engine"],
         linkType: "private" as ProjectLinkType,
-        
+        myRole: "Lead Enterprise Software Engineer",
+        clientProblem: "A large enterprise needed to consolidate multi-shift rotations, attendance biometrics, complex statutory tax formulas, and executive salary disbursements under strict corporate security and NDA protocols.",
+        solution: "Engineered a secure HRIS architecture featuring automated salary/tax computation engines, dynamic Word/Excel/PDF pay stub generators, multi-tier approval hierarchies, and strict Content Security Policies (CSP).",
+        impact: [
+            "Automated end-of-month payroll computation for over 500+ employees within minutes",
+            "Strict cryptographic security and role-based access ensuring total salary privacy",
+            "Eliminated payroll calculation discrepancies and delays completely"
+        ],
         roleNote: "Confidential Enterprise Project (Client details and sensitive identities obfuscated under NDA)",
         highlights: ["Multi-tier salary & tax computation","Automated Word/Excel/PDF pay slips","Role-based authorization & audit trail","Strict CSP security & encryption"]
     },
@@ -279,7 +345,14 @@ export const projects: Project[] = [
         longDescription: "Originally developed in 2019 by another team and abandoned, this project was revitalized following client engagement. Conducted legacy code audits, migrated outdated dependencies, re-architected the Python backend onto AWS serverless with Zappa, and engineered crucial new business analytics modules.",
         tech: ["Python","Flask","AWS Serverless","Zappa","Alembic","PostgreSQL"],
         linkType: "private" as ProjectLinkType,
-        
+        myRole: "Backend Modernization & Cloud Architect",
+        clientProblem: "An abandoned 2019 legacy Python auction system suffered from high idle server maintenance expenses, database schema drift, deprecated dependencies, and unreliability during high-traffic auction peaks.",
+        solution: "Audited and refactored the legacy Flask codebase, restructured database migrations with Alembic, and migrated the architecture to AWS Serverless using Zappa and PostgreSQL for elastic scaling.",
+        impact: [
+            "Revived an abandoned legacy product and resolved 4+ years of accumulated technical debt",
+            "Achieved near-zero idle server costs through AWS Serverless elasticity",
+            "Handled concurrent auction bidding spikes without latency or downtime"
+        ],
         roleNote: "Modernized & Upgraded upon Client Request (Revamped 2019 Legacy Base)",
         highlights: ["Revamped abandoned 2019 codebase","Migrated to AWS Serverless (Zappa)","Database schema migration with Alembic","Engineered custom property bidding features"]
     },
@@ -337,6 +410,14 @@ export const projects: Project[] = [
         tech: ["Laravel","Vue.js","MySQL","REST API","Tailwind CSS"],
         linkType: "live" as ProjectLinkType,
         linkUrl: "https://nextgenware.lk",
+        myRole: "Full-Stack SaaS Engineer",
+        clientProblem: "Omnichannel retailers faced inventory mismatches between physical store POS checkouts and web stores, leading to frequent overselling, manual reconciliation headaches, and delayed deliveries.",
+        solution: "Engineered a multi-tenant cloud eCommerce engine integrating atomic stock reservation hooks, webhook-based POS sync, payment gateway routing, and branch-level fulfillment dashboards.",
+        impact: [
+            "Eliminated inventory desynchronization and overselling across retail branches",
+            "Accelerated order dispatch and automated courier tracking updates",
+            "Multi-tenant infrastructure capable of spinning up tenant storefronts seamlessly"
+        ],
         roleNote: "Proprietary SaaS Product developed for NextGenWare Software Solutions",
         highlights: ["Multi-tenant cloud architecture","Omnichannel inventory deduction","Payment gateway integration","Automated dispatch tracking"]
     },

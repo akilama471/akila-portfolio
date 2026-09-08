@@ -89,12 +89,29 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </div>
 
                 {/* Header */}
-                <h3 id="project-modal-title" className="text-2xl font-bold text-white mb-2">
-                    {project.title}
-                </h3>
+                <div className="flex flex-col gap-2 mb-4">
+                    <h3 id="project-modal-title" className="text-xl md:text-2xl font-bold text-white">
+                        {project.title}
+                    </h3>
+                    
+                    {/* Role & Metadata Badges */}
+                    <div className="flex items-center gap-2 flex-wrap text-xs">
+                        {project.myRole && (
+                            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 font-mono font-medium">
+                                <FontAwesomeIcon icon={icons.userTie} className="text-cyan-400 text-xs" />
+                                <span>Role: {project.myRole}</span>
+                            </div>
+                        )}
+                        {project.year && (
+                            <span className="px-2.5 py-1 rounded-full bg-dark-900 border border-gray-700 text-gray-400 font-mono">
+                                {project.year}
+                            </span>
+                        )}
+                    </div>
+                </div>
 
                 {/* Role / Ownership Notice */}
-                <div className="mb-4 text-xs font-mono px-3 py-2 rounded-lg bg-dark-900 border border-gray-700/60 text-gray-300 flex items-center gap-2">
+                <div className="mb-5 text-xs font-mono px-3 py-2 rounded-lg bg-dark-900 border border-gray-700/60 text-gray-300 flex items-center gap-2">
                     <FontAwesomeIcon
                         icon={project.confidential ? icons.shield : icons.laptopcode}
                         className={project.confidential ? "text-amber-400" : "text-primary"}
@@ -102,15 +119,62 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     <span>{project.roleNote}</span>
                 </div>
 
-                {/* Description */}
-                <div className="text-gray-300 text-sm md:text-base leading-relaxed mb-6 space-y-3">
+                {/* Overview Description */}
+                <div className="text-gray-300 text-sm md:text-base leading-relaxed mb-6">
                     <p>{project.longDescription || project.description}</p>
                 </div>
 
-                {/* Key Technical Highlights */}
-                {project.highlights && project.highlights.length > 0 && (
+                {/* Case Study Section: Problem & Solution Cards */}
+                {(project.clientProblem || project.solution) && (
+                    <div className="grid grid-cols-1 gap-3.5 mb-6">
+                        {project.clientProblem && (
+                            <div className="p-4 rounded-xl bg-amber-500/[0.04] border border-amber-500/20">
+                                <div className="flex items-center gap-2 text-amber-400 font-semibold text-xs uppercase tracking-wider mb-2 font-mono">
+                                    <FontAwesomeIcon icon={icons.problem} className="text-amber-400" />
+                                    <span>The Challenge & Client Problem</span>
+                                </div>
+                                <p className="text-xs md:text-sm text-gray-300 leading-relaxed">
+                                    {project.clientProblem}
+                                </p>
+                            </div>
+                        )}
+
+                        {project.solution && (
+                            <div className="p-4 rounded-xl bg-cyan-500/[0.04] border border-cyan-500/20">
+                                <div className="flex items-center gap-2 text-cyan-400 font-semibold text-xs uppercase tracking-wider mb-2 font-mono">
+                                    <FontAwesomeIcon icon={icons.lightbulb} className="text-cyan-400" />
+                                    <span>Engineered Solution & Architecture</span>
+                                </div>
+                                <p className="text-xs md:text-sm text-gray-300 leading-relaxed">
+                                    {project.solution}
+                                </p>
+                            </div>
+                        )}
+                    </div>
+                )}
+
+                {/* Measurable Impact & Outcomes */}
+                {project.impact && project.impact.length > 0 && (
+                    <div className="mb-6 p-4 rounded-xl bg-emerald-500/[0.04] border border-emerald-500/20">
+                        <h4 className="flex items-center gap-2 text-emerald-400 font-semibold text-xs uppercase tracking-wider mb-3 font-mono">
+                            <FontAwesomeIcon icon={icons.rocket} className="text-emerald-400" />
+                            <span>Measurable Impact & Key Results</span>
+                        </h4>
+                        <div className="space-y-2">
+                            {project.impact.map((item, index) => (
+                                <div key={index} className="flex items-start gap-2.5 text-xs md:text-sm text-gray-300">
+                                    <FontAwesomeIcon icon={icons.checkCircle} className="text-emerald-400 text-xs mt-1 shrink-0" />
+                                    <span>{item}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Key Technical Highlights (if separate or additional) */}
+                {(!project.impact || project.impact.length === 0) && project.highlights && project.highlights.length > 0 && (
                     <div className="mb-6">
-                        <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3">
+                        <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-3 font-mono">
                             Key Architectural Highlights
                         </h4>
                         <div className="space-y-2">
@@ -126,7 +190,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
                 {/* Technologies */}
                 <div className="mb-6">
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2.5 font-mono">
                         Technologies & Frameworks
                     </h4>
                     <div className="flex flex-wrap gap-2">

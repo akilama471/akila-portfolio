@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "@/data/icons";
 import Link from "next/link";
+import emailjs from "@emailjs/browser";
 
 type InquiryType = 'project' | 'hire' | 'general';
 
@@ -10,6 +11,7 @@ export default function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
     const [inquiryType, setInquiryType] = useState<InquiryType>('project');
+    const formRef = useRef<HTMLFormElement>(null);
     const messageInputRef = useRef<HTMLTextAreaElement>(null);
     const formCardRef = useRef<HTMLDivElement>(null);
 
@@ -30,21 +32,22 @@ export default function Contact() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if (!formRef.current) return;
+
         setIsSubmitting(true);
         setSubmitStatus(null);
 
         try {
-            const emailjs = (await import("@emailjs/browser")).default;
             await emailjs.sendForm(
                 process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
                 process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
-                e.currentTarget,
+                formRef.current,
                 {
                     publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '',
                 }
             );
             setSubmitStatus('success');
-            (e.target as HTMLFormElement).reset();
+            formRef.current.reset();
         } catch (error) {
             console.error('EmailJS Error:', error);
             setSubmitStatus('error');
@@ -76,7 +79,7 @@ export default function Contact() {
                         </div>
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Get In Touch</h2>
                         <p className="text-gray-400 max-w-xl mx-auto">
-                            Whether you're looking to hire an experienced Full-Stack Architect or need an enterprise system built from scratch, choose your path below.
+                            Whether you&apos;re looking to hire an experienced Full-Stack Architect or need an enterprise system built from scratch, choose your path below.
                         </p>
                     </div>
 
@@ -308,7 +311,7 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            <form onSubmit={handleSubmit} className="space-y-4">
+                            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                                 <input type="hidden" name="inquiry_type" value={inquiryType} />
 
                                 <div>

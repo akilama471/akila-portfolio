@@ -1,5 +1,5 @@
 import { faGithub, faLinkedin, faFacebook, faWhatsapp, faFlutter, faLaravel, faPinterest } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faPhone, faGraduationCap, faAward, faLaptopCode, faCode, faServer, faMobileAlt, faGlobe, faMobileScreen, faDesktop, faChartLine, faBars, faMapMarkerAlt, faArrowRight, faChevronRight, faXmark, faLock, faArrowUpRightFromSquare, faShieldHalved, faWrench, faLayerGroup, faGamepad, faCircleCheck, faCertificate, faMagnifyingGlassPlus, faIdBadge, faDownload, faRocket, faBriefcase, faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faPhone, faGraduationCap, faAward, faLaptopCode, faCode, faServer, faMobileAlt, faGlobe, faMobileScreen, faDesktop, faChartLine, faBars, faMapMarkerAlt, faArrowRight, faChevronRight, faXmark, faLock, faArrowUpRightFromSquare, faShieldHalved, faWrench, faLayerGroup, faGamepad, faCircleCheck, faCertificate, faMagnifyingGlassPlus, faIdBadge, faDownload, faRocket, faBriefcase, faFilePdf, faLightbulb, faCircleExclamation, faBullseye, faUserTie } from "@fortawesome/free-solid-svg-icons";
 
 export const icons = {
     github: faGithub,
@@ -41,4 +41,8 @@ export const icons = {
     rocket: faRocket,
     briefcase: faBriefcase,
     filePdf: faFilePdf,
+    lightbulb: faLightbulb,
+    problem: faCircleExclamation,
+    bullseye: faBullseye,
+    userTie: faUserTie,
 };
