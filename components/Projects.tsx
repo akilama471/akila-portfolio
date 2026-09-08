@@ -12,8 +12,8 @@ import ProjectModal from "./widget/ProjectModal";
 export default function Projects() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-    // Show only the 6 most valuable featured projects
-    const featuredProjects = projects.filter(p => p.isFeatured).slice(0, 6);
+    // Show only the 3 most valuable featured projects
+    const featuredProjects = projects.filter(p => p.isFeatured).slice(0, 3);
 
     return (
         <section id="projects" className="py-20 relative">
@@ -35,7 +35,7 @@ export default function Projects() {
                     </Link>
                 </div>
 
-                {/* Projects Grid (6 Most Valuable Projects) */}
+                {/* Projects Grid (3 Most Valuable Projects) */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {featuredProjects.map(project => (
                         <ProjectCard

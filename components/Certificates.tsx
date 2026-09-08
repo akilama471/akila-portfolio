@@ -15,6 +15,11 @@ export default function Certificates() {
     // 4 Featured Certificates for the Homepage
     const featuredCertificates = certificates.filter(c => c.isFeatured).slice(0, 4);
 
+    // Dynamic certificate count:
+    // If less than 10 -> exact count, if 10 or more -> nearest multiple of 10 with '+' (e.g. 10+, 20+, 50+, 100+)
+    const totalCerts = certificates.length;
+    const certCountDisplay = totalCerts < 10 ? `${totalCerts}` : `${Math.floor(totalCerts / 10) * 10}+`;
+
     return (
         <section id="certificates" className="py-20 bg-dark-900/60 relative">
             <div className="container mx-auto px-6">
@@ -54,7 +59,7 @@ export default function Certificates() {
                                 Looking for the complete certification record?
                             </h4>
                             <p className="text-xs md:text-sm text-gray-400">
-                                Explore all 100+ verified certificates, programming licenses, and digital badges with instant verification links and zoom inspect.
+                                Explore all {certCountDisplay} verified certificates, programming licenses, and digital badges with instant verification links and zoom inspect.
                             </p>
                         </div>
                         <Link

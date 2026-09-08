@@ -1,9 +1,10 @@
-import { faGithub, faLinkedin, faFacebook, faWhatsapp, faFlutter, faLaravel } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin, faFacebook, faWhatsapp, faFlutter, faLaravel, faPinterest } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faPhone, faGraduationCap, faAward, faLaptopCode, faCode, faServer, faMobileAlt, faGlobe, faMobileScreen, faDesktop, faChartLine, faBars, faMapMarkerAlt, faArrowRight, faChevronRight, faXmark, faLock, faArrowUpRightFromSquare, faShieldHalved, faWrench, faLayerGroup, faGamepad, faCircleCheck, faCertificate, faMagnifyingGlassPlus, faIdBadge, faDownload, faRocket, faBriefcase, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 
 export const icons = {
     github: faGithub,
     linkedin: faLinkedin,
+    pinterest: faPinterest,
     facebook: faFacebook,
     email: faEnvelope,
     phone: faPhone,
