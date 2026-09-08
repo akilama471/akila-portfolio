@@ -83,3 +83,12 @@
 .animate-fade-in {
     animation: fadeIn 0.25s ease-out both;
 }
+
+/* Accessibility & Reduced Motion: Ensure elements with data-aos are always visible */
+@media (prefers-reduced-motion: reduce) {
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}

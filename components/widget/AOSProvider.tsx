@@ -13,34 +13,43 @@ export default function AOSProvider({
     const pathname = usePathname();
 
     useEffect(() => {
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (prefersReducedMotion) {
+            // Remove data-aos attributes on newly mounted DOM nodes so no AOS inline/CSS hides content
+            document.querySelectorAll("[data-aos]").forEach((el) => {
+                el.removeAttribute("data-aos");
+                el.removeAttribute("data-aos-delay");
+                el.removeAttribute("data-aos-duration");
+                el.removeAttribute("data-aos-easing");
+            });
+            return;
+        }
+
         AOS.init({
             duration: 800,
             once: true,
             easing: "ease-out-cubic",
-            disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
         });
-    }, []);
 
-    // Re-initialize and refresh AOS on every client-side route navigation
-    useEffect(() => {
-        const refreshAOS = () => {
+        const syncAOS = () => {
             AOS.refreshHard();
             window.dispatchEvent(new Event("scroll"));
         };
 
-        // Immediate refresh and delayed refresh to allow React to mount the new DOM nodes
-        refreshAOS();
-        const timer1 = setTimeout(refreshAOS, 100);
-        const timer2 = setTimeout(refreshAOS, 300);
+        // Sync immediately and with slight delays to allow React to mount new DOM nodes
+        syncAOS();
+        const t1 = setTimeout(syncAOS, 100);
+        const t2 = setTimeout(syncAOS, 300);
 
-        window.addEventListener("hashchange", refreshAOS);
-        window.addEventListener("popstate", refreshAOS);
+        window.addEventListener("hashchange", syncAOS);
+        window.addEventListener("popstate", syncAOS);
 
         return () => {
-            clearTimeout(timer1);
-            clearTimeout(timer2);
-            window.removeEventListener("hashchange", refreshAOS);
-            window.removeEventListener("popstate", refreshAOS);
+            clearTimeout(t1);
+            clearTimeout(t2);
+            window.removeEventListener("hashchange", syncAOS);
+            window.removeEventListener("popstate", syncAOS);
         };
     }, [pathname]);
 
