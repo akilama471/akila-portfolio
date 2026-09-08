@@ -121,12 +121,12 @@ export default function AboutPage() {
                             <p className="text-xs uppercase font-semibold tracking-wider text-gray-400">Years Experience</p>
                         </div>
                         <div className="p-5 rounded-2xl bg-dark-800/80 border border-gray-800 text-center">
-                            <h3 className="text-3xl md:text-4xl font-extrabold text-secondary font-mono mb-1">57+</h3>
-                            <p className="text-xs uppercase font-semibold tracking-wider text-gray-400">Total Projects</p>
+                            <h3 className="text-3xl md:text-4xl font-extrabold text-cyan-400 font-mono mb-1">10+</h3>
+                            <p className="text-xs uppercase font-semibold tracking-wider text-gray-400">Client & Enterprise Systems</p>
                         </div>
                         <div className="p-5 rounded-2xl bg-dark-800/80 border border-gray-800 text-center">
-                            <h3 className="text-3xl md:text-4xl font-extrabold text-cyan-400 font-mono mb-1">10+</h3>
-                            <p className="text-xs uppercase font-semibold tracking-wider text-gray-400">Enterprise Solutions</p>
+                            <h3 className="text-3xl md:text-4xl font-extrabold text-secondary font-mono mb-1">57+</h3>
+                            <p className="text-xs uppercase font-semibold tracking-wider text-gray-400">Software Projects & Products</p>
                         </div>
                         <div className="p-5 rounded-2xl bg-dark-800/80 border border-gray-800 text-center">
                             <h3 className="text-3xl md:text-4xl font-extrabold text-emerald-400 font-mono mb-1">100%</h3>

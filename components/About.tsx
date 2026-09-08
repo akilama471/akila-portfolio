@@ -21,14 +21,18 @@ export default function About() {
                             I specialize in building robust digital solutions, from responsive web applications to scalable backend systems and cross-platform mobile apps. Founder of <span className="text-primary font-semibold">NextGenWare</span>, I help businesses bridge the gap between technology and success.
                         </p>
 
-                        <div className="grid grid-cols-2 gap-4 mb-6">
-                            <div className="p-4 bg-dark-900 rounded-lg border border-gray-700">
-                                <h4 className="text-primary font-bold text-xl">5+</h4>
-                                <p className="text-sm text-gray-400">Years Experience</p>
+                        <div className="grid grid-cols-3 gap-3 mb-6">
+                            <div className="p-3.5 bg-dark-900 rounded-xl border border-gray-700/80 hover:border-primary/40 transition-colors">
+                                <h4 className="text-primary font-bold text-xl md:text-2xl font-mono">5+</h4>
+                                <p className="text-xs text-gray-400 font-medium mt-1 leading-snug">Years Experience</p>
                             </div>
-                            <div className="p-4 bg-dark-900 rounded-lg border border-gray-700">
-                                <h4 className="text-primary font-bold text-xl">57+</h4>
-                                <p className="text-sm text-gray-400">Projects Built</p>
+                            <div className="p-3.5 bg-dark-900 rounded-xl border border-gray-700/80 hover:border-cyan-400/40 transition-colors">
+                                <h4 className="text-cyan-400 font-bold text-xl md:text-2xl font-mono">10+</h4>
+                                <p className="text-xs text-gray-400 font-medium mt-1 leading-snug">Client & Enterprise Systems</p>
+                            </div>
+                            <div className="p-3.5 bg-dark-900 rounded-xl border border-gray-700/80 hover:border-secondary/40 transition-colors">
+                                <h4 className="text-secondary font-bold text-xl md:text-2xl font-mono">57+</h4>
+                                <p className="text-xs text-gray-400 font-medium mt-1 leading-snug">Software Projects & Products</p>
                             </div>
                         </div>
 

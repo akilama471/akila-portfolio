@@ -30,7 +30,7 @@ export default function Projects() {
                         href="/projects"
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-dark-900 transition-all font-medium text-sm mt-4 md:mt-0 group"
                     >
-                        <span>View Project Archive ({projects.length})</span>
+                        <span>View Complete Archive ({projects.length}+)</span>
                         <FontAwesomeIcon icon={icons.arrowRight} className="text-xs group-hover:translate-x-1 transition-transform" />
                     </Link>
                 </div>
@@ -54,7 +54,7 @@ export default function Projects() {
                                 Looking for the complete portfolio?
                             </h4>
                             <p className="text-xs md:text-sm text-gray-400">
-                                Explore all {projects.length}+ client systems, open-source repositories, WordPress plugins, and templates.
+                                Explore all 10+ client & enterprise solutions alongside open-source tools, SaaS platforms, and templates ({projects.length}+ total codebases).
                             </p>
                         </div>
                         <Link
