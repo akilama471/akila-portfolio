@@ -23,7 +23,7 @@ export default function Projects() {
                     <div>
                         <SectionTitle title="Featured Projects" />
                         <p className="text-gray-400 mt-2 max-w-2xl text-sm md:text-base">
-                            Handpicked selection of flagship enterprise platforms, fintech solutions, cross-platform mobile apps, and SaaS architectures.
+                            Proven production systems: Mission-critical ERPs, fault-tolerant POS terminals, multi-tenant SaaS, and high-performance mobile apps built for real business impact.
                         </p>
                     </div>
                     <Link

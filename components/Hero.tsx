@@ -13,7 +13,7 @@ export default function Hero() {
             <div className="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center gap-12">
                 <div className="w-full md:w-1/2 space-y-6 animate-project-fade">
                     <div className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-mono mb-2">
-                        👋 Hello, I'm
+                        💼 Business Systems & Software Architect
                     </div>
                     <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
                         Akila <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Madhushanka</span>
@@ -21,7 +21,12 @@ export default function Hero() {
                     <h2 className="text-2xl md:text-3xl text-gray-400 font-mono">
                         <Typewriter
                             options={{
-                                strings: ['Full-Stack Developer', 'Mobile App Expert', 'Solutions Architect', 'Tech Enthusiast'],
+                                strings: [
+                                    'Business Systems Architect',
+                                    'ERP & POS Specialist',
+                                    'SaaS & Mobile Engineer',
+                                    'Full-Stack Solutions Architect'
+                                ],
                                 autoStart: true,
                                 loop: true,
                                 delay: 75,
@@ -29,11 +34,41 @@ export default function Hero() {
                             }}
                         />
                     </h2>
-                    <p className="text-lg text-gray-400 max-w-lg leading-relaxed">
-                        Transforming ideas into digital reality. I craft robust solutions across Web, Mobile, and Backend systems with a focus on scalability and user experience.
+                    <p className="text-lg text-gray-300 max-w-lg leading-relaxed">
+                        <span className="text-white font-semibold">I solve difficult business problems with software.</span> Designing and engineering mission-critical ERPs, fault-tolerant POS systems, scalable SaaS platforms, and mobile apps built for high reliability.
                     </p>
 
-                    <div className="flex flex-wrap gap-4 pt-4">
+                    {/* Proof of Capability Flow */}
+                    <div className="pt-1">
+                        <p className="text-xs font-mono uppercase tracking-wider text-gray-300 font-semibold mb-2.5 flex items-center gap-2">
+                            <span className="inline-block w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(6,182,212,0.8)] animate-pulse"></span>
+                            <span>Proven Delivery Track:</span>
+                        </p>
+                        <div className="flex flex-wrap items-center gap-2 text-xs font-mono">
+                            {[
+                                { label: "ERP", desc: "Enterprise Workflows & Data Integrity" },
+                                { label: "POS", desc: "Zero-Downtime Retail Transactions" },
+                                { label: "SaaS", desc: "Multi-Tenant Cloud Platforms" },
+                                { label: "Mobile", desc: "Cross-Platform & Offline-Ready" },
+                                { label: "APIs", desc: "Integrations & Legacy Sync" },
+                                { label: "GitHub", desc: "Clean Architecture & Open Code" }
+                            ].map((item, idx, arr) => (
+                                <div key={item.label} className="flex items-center gap-2">
+                                    <span 
+                                        title={item.desc}
+                                        className="px-2.5 py-1 rounded-md bg-dark-900 border border-gray-700/80 text-gray-200 hover:text-primary hover:border-primary/60 hover:bg-dark-800 transition-all cursor-default shadow-sm font-medium"
+                                    >
+                                        {item.label}
+                                    </span>
+                                    {idx < arr.length - 1 && (
+                                        <span className="text-primary/70 select-none text-xs font-bold">➔</span>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-4 pt-2">
 
                         <Link href="/projects" className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-lg hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] transition-all transform hover:-translate-y-1">
                             View Work
@@ -44,7 +79,7 @@ export default function Hero() {
                         </Link>
                     </div>
 
-                    <div className="flex gap-6 pt-8 text-gray-400">
+                    <div className="flex gap-6 pt-6 text-gray-400">
 
                         <Link href="https://lk.linkedin.com/in/akilamadhushanka471" aria-label="LinkedIn Profile" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-2xl">
                             <FontAwesomeIcon icon={icons.linkedin} />
@@ -73,18 +108,18 @@ export default function Hero() {
                         />
 
                         <div className="absolute top-10 -right-4 glass px-4 py-2 rounded-lg flex items-center gap-3 animate-bounce shadow-lg z-20">
-                            <FontAwesomeIcon icon={icons.flutter} className="text-primary text-2xl" />
+                            <FontAwesomeIcon icon={icons.laptopcode} className="text-primary text-2xl" />
                             <div>
                                 <p className="text-xs text-gray-400">Expertise</p>
-                                <p className="text-sm font-bold text-white">Flutter Dev</p>
+                                <p className="text-sm font-bold text-white">ERP & POS</p>
                             </div>
                         </div>
 
                         <div className="absolute bottom-10 -left-4 glass px-4 py-2 rounded-lg flex items-center gap-3 animate-bounce shadow-lg z-20 delay-150">
                             <FontAwesomeIcon icon={icons.laravel} className="text-red-500 text-2xl" />
                             <div>
-                                <p className="text-xs text-gray-400">Backend</p>
-                                <p className="text-sm font-bold text-white">Laravel</p>
+                                <p className="text-xs text-gray-400">Backend & Cloud</p>
+                                <p className="text-sm font-bold text-white">SaaS & APIs</p>
                             </div>
                         </div>
                     </div>

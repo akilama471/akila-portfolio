@@ -16,12 +16,12 @@ export default function About() {
 
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div data-aos="fade-right">
-                        <h3 className="text-2xl font-bold text-white mb-4">Full-Stack Developer & Solutions Architect</h3>
+                        <h3 className="text-2xl font-bold text-white mb-4">Engineering Business-Critical Systems</h3>
                         <p className="text-gray-400 mb-6 leading-relaxed">
-                            I'm Akila Madhushanka, a self-driven developer from Sri Lanka with over {yearsExperience} years of experience. My technical journey is built on curiosity and a passion for solving complex problems through elegant code.
+                            I'm Akila Madhushanka, a systems engineer and developer from Sri Lanka with over {yearsExperience} years of experience. I don't just write code—I focus on solving real operational challenges through resilient software architecture.
                         </p>
                         <p className="text-gray-400 mb-6 leading-relaxed">
-                            I specialize in building robust digital solutions, from responsive web applications to scalable backend systems and cross-platform mobile apps. Founder of <span className="text-primary font-semibold">NextGenWare</span>, I help businesses bridge the gap between technology and success.
+                            From fault-tolerant POS terminals and company-wide ERP management platforms to multi-tenant SaaS products and cross-platform mobile apps, I bridge the gap between technical complexity and business growth. Founder of <span className="text-primary font-semibold">NextGenWare</span>.
                         </p>
 
                         <div className="grid grid-cols-3 gap-3 mb-6">
@@ -64,7 +64,7 @@ export default function About() {
                         <div className="p-6 bg-dark-900 rounded-xl border border-gray-700 hover:border-primary/50 transition-colors sm:col-span-2">
                             <FontAwesomeIcon icon={icons.laptopcode} aria-hidden="true" className="text-primary text-3xl mb-4" />
                             <h4 className="text-white font-bold mb-2">Current Focus</h4>
-                            <p className="text-sm text-gray-400">Building scalable enterprise solutions with Laravel & Flutter at NextGenWare.</p>
+                            <p className="text-sm text-gray-400">Architecting mission-critical ERPs, POS transaction engines, and high-performance mobile apps at NextGenWare.</p>
                         </div>
                     </div>
                 </div>
