@@ -64,6 +64,12 @@ export const metadata = {
       twitterImage.src,
     ],
   },
+  alternates: {
+    canonical: "https://akilama471.github.io",
+    types: {
+      "text/markdown": "https://akilama471.github.io/llms.txt",
+    },
+  },
 };
 
 export default function RootLayout({
@@ -78,6 +84,11 @@ export default function RootLayout({
       className={`h-full antialiased ${outfit.variable} ${spaceGrotesk.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <link rel="alternate" type="text/markdown" href="https://akilama471.github.io/llms.txt" />
+        <link rel="alternate" type="text/plain" href="https://akilama471.github.io/llms-full.txt" />
+        <link rel="describedby" href="https://akilama471.github.io/llms.txt" />
+      </head>
       <body
         className="bg-dark-900 text-gray-300 font-sans antialiased overflow-x-hidden relative"
         suppressHydrationWarning
