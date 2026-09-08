@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { icons } from "@/data/icons";
 import myProfileImg from "@/assets/images/my-profile-img.webp";
+import { getYearsOfExperience } from "@/utils/experience";
 
 export const metadata = {
     title: "About Akila Madhushanka | Full-Stack Developer & Solutions Architect",
@@ -10,6 +11,7 @@ export const metadata = {
 };
 
 export default function AboutPage() {
+    const yearsExperience = getYearsOfExperience();
     return (
         <>
             <main className="min-h-screen bg-dark-900 text-gray-300 pt-28 pb-20 md:pt-32">
@@ -117,7 +119,7 @@ export default function AboutPage() {
                     {/* Stats Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
                         <div className="p-5 rounded-2xl bg-dark-800/80 border border-gray-800 text-center">
-                            <h3 className="text-3xl md:text-4xl font-extrabold text-primary font-mono mb-1">5+</h3>
+                            <h3 className="text-3xl md:text-4xl font-extrabold text-primary font-mono mb-1">{yearsExperience}+</h3>
                             <p className="text-xs uppercase font-semibold tracking-wider text-gray-400">Years Experience</p>
                         </div>
                         <div className="p-5 rounded-2xl bg-dark-800/80 border border-gray-800 text-center">
