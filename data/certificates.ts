@@ -86,7 +86,7 @@ export const certificates: Certificate[] = [
     {
         id: "uom-python-algorithms",
         title: "Python Programming & Computing Algorithms",
-        issuer: "University of Moratuwa",
+        issuer: "University of Moratuwa (Open UoM)",
         issueDate: "Verified",
         type: "certificate",
         category: "python-data",
@@ -95,7 +95,7 @@ export const certificates: Certificate[] = [
         image: fccJsImg, // Placeholder until user drops certificate image
         credentialUrl: "https://open.uom.lk",
         credentialId: "UOM-CODL-PY-2022",
-        description: "Academic qualification covering computational thinking, structured Python development, algorithm complexity, modular program architecture, and programmatic problem-solving.",
+        description: "Foundational certificate course covering computational thinking, structured Python development, algorithm complexity, modular program architecture, and programmatic problem-solving via Open UoM (CODL).",
         isFeatured: true
     },
     {

@@ -111,10 +111,6 @@ export default function RootLayout({
                 name: "NextGenWare",
                 url: "https://www.nextgenware.lk"
               },
-              alumniOf: {
-                "@type": "CollegeOrUniversity",
-                name: "University of Moratuwa"
-              },
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Wariyapola",

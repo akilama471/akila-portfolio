@@ -71,7 +71,7 @@ export default function AboutPage() {
                             </h1>
 
                             <p className="text-base text-gray-300 leading-relaxed">
-                                I&apos;m <strong className="text-white">Akila Madhushanka</strong>, a Full-Stack Solutions Architect and Senior Software Engineer based in Sri Lanka. With 5+ years of hands-on technical leadership, I engineer high-performance web platforms, cross-platform mobile apps, and robust enterprise backend systems.
+                                I&apos;m <strong className="text-white">Akila Madhushanka</strong>, a self-taught Full-Stack Solutions Architect and Senior Software Engineer based in Sri Lanka. Having embarked on an intensive self-study journey in 2017 and engineering production systems across the industry since 2019, I architect high-performance web platforms, cross-platform mobile apps, and robust enterprise backend systems.
                             </p>
 
                             <p className="text-sm text-gray-400 leading-relaxed">
@@ -233,7 +233,7 @@ export default function AboutPage() {
                     <div className="mb-16">
                         <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                             <FontAwesomeIcon icon={icons.graduationCap} className="text-primary text-xl" />
-                            Education & Professional Certifications
+                            Continuous Learning & Professional Certifications
                         </h2>
 
                         <div className="grid sm:grid-cols-2 gap-5">
@@ -242,10 +242,10 @@ export default function AboutPage() {
                                     <FontAwesomeIcon icon={icons.graduationCap} className="text-xl" />
                                 </div>
                                 <div>
-                                    <h3 className="text-base font-bold text-white">University of Moratuwa</h3>
-                                    <p className="text-xs text-primary font-mono mt-0.5">Python Programming & Algorithms</p>
+                                    <h3 className="text-base font-bold text-white">University of Moratuwa (Open Online)</h3>
+                                    <p className="text-xs text-primary font-mono mt-0.5">Foundational Certificate: Python & Algorithms</p>
                                     <p className="text-xs text-gray-400 mt-2 leading-relaxed">
-                                        Advanced computing algorithms, data structures, computational logic, and procedural automation.
+                                        Completed foundational computing algorithms, data structures, computational logic, and procedural automation via Open UoM (CODL).
                                     </p>
                                 </div>
                             </div>
